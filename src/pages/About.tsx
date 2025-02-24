@@ -59,20 +59,20 @@ export function About() {
         >
           <h2 className="text-2xl font-bold text-white mb-4">Our Story</h2>
           <p className="text-white mb-4">
-            🚀 The Story of NeuraMindsAI – Where Intelligence Meets Innovation 🚀
+          The Story of NeuraMindsAI – Where Intelligence Meets Innovation 🚀
           </p>
-          <p>Once upon a time, a group of dreamers 🌟 saw a world full of challenges—hotels struggling to satisfy guests 🏨, doctors racing against time to save lives 🏥, farmers battling unpredictable weather 🌾, and businesses lost in data chaos 📊</p>
-<p>They knew AI could <b>change everything</b>—not just with automation, but with <b>intelligent, human-centric solution</b> And so, <b>NeuraMindsAI</b> was born! 🚀💙 </p>  
+          <p>Once upon a time, a group of dreamers 🌟 saw a world full of challenges—hotels struggling to satisfy guests , doctors racing against time to save lives 🏥, farmers battling unpredictable weather , and businesses lost in data chaos 📊</p>
+<p>They knew AI could <b>change everything</b>—not just with automation, but with <b>intelligent, human-centric solution</b> And so, <b>NeuraMindsAI</b> was born! </p>  
 <p>
 From <b>smart hospitality</b> to <b>AI-powered healthcare</b>, <b>seamless event management</b>, <b>precision agriculture</b>, and <b>secure FinTech solutions</b>—NeuraMindsAI is <b>shaping the future</b> one innovation at a time.
 </p>
           <p>
-Because here, <b>it isn’t just about technology—it’s about empowering people</b>. 🌍✨  
+Because here, <b>it isn’t just about technology—it’s about empowering people</b>.   
           </p><p>
-<b>Welcome to NeuraMindsAI. Where Intelligence Knows No Limits! 💡💙</b>
+<b>Welcome to NeuraMindsAI. Where Intelligence Knows No Limits 💡</b>
           </p>
           <p className="text-white">
-            Today, we're proud to be at the forefront of AI innovation, helping companies across multiple industries transforming their operations and achieve unprecedented growth through intelligent automation and data-driven insights.
+            Today, we're proud to be at the forefront of AI innovation, helping companies across multiple industries transforming their operations and achieve unprecedented growth through intelligent automation and data-driven insights.🧠
           </p>
         </motion.div>
       </div>
