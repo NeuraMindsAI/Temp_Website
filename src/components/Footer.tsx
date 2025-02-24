@@ -43,9 +43,9 @@ export function Footer() {
         {/* Right - Contact & Social Media */}
         <div>
           <h3 className="text-lg font-semibold text-white">Contact Us</h3>
-          <p className="flex items-center justify-center md:justify-start gap-2 mt-2">
+          <a href="mailto:neuramindsai@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-2 mt-2">
             <Mail size={18} /> neuramindsai@gmail.com
-          </p>
+          </a>
           <p className="flex items-center justify-center md:justify-start gap-2 mt-1">
             <MapPin size={18} /> Mumbai, India
           </p>
