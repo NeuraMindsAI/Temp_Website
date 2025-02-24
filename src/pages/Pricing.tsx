@@ -32,7 +32,7 @@ export function Pricing() {
       buttonText: "Schedule a Call",
     },
     {
-      title: "Partner Program",
+      title: "Premium",
       description: "Enterprise-grade bots with wide range of functionality",
       features: [
         "Everything in Standard",
