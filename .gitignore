@@ -7,10 +7,25 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependency directories
 node_modules
 dist
 dist-ssr
 *.local
+venv/          # Ignore Python virtual environment
+
+# Django-related files
+__pycache__/
+db.sqlite3      # Ignore SQLite database (if used)
+*.pyc           # Ignore compiled Python files
+*.pyo
+*.pyd
+
+# Backend-specific folders
+media/         # Ignore uploaded media files
+staticfiles/   # Ignore collected static files
+.env           # Ignore environment variables file
+*.sqlite3      # Ignore SQLite database files
 
 # Editor directories and files
 .vscode/*

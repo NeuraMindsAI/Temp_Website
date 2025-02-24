@@ -1,9 +1,40 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    const response = await fetch("http://127.0.0.1:8000/api/contact/submit/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setStatus("Failed to send message. Try again.");
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden">
-       <div className="max-w-6xl mx-auto pt-24">
+      <div className="max-w-6xl mx-auto pt-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -19,8 +50,8 @@ export function Contact() {
         </motion.div>
       </div>
 
-      {/* Contact Form */}
       <motion.form
+        onSubmit={handleSubmit}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -33,6 +64,8 @@ export function Contact() {
             <input
               type="text"
               id="name"
+              value={formData.name}
+              onChange={handleChange}
               className="w-full px-4 py-2 rounded-lg bg-black/40 border border-violet-500/30 text-white focus:outline-none focus:border-violet-500/60"
               placeholder="Your name"
             />
@@ -42,6 +75,8 @@ export function Contact() {
             <input
               type="email"
               id="email"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full px-4 py-2 rounded-lg bg-black/40 border border-violet-500/30 text-white focus:outline-none focus:border-violet-500/60"
               placeholder="your@email.com"
             />
@@ -50,20 +85,18 @@ export function Contact() {
             <label htmlFor="message" className="block text-sm text-violet-300 mb-1">Message</label>
             <textarea
               id="message"
+              value={formData.message}
+              onChange={handleChange}
               rows={4}
               className="w-full px-4 py-2 rounded-lg bg-black/40 border border-violet-500/30 text-white focus:outline-none focus:border-violet-500/60"
               placeholder="Your message"
             ></textarea>
           </div>
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            className="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-violet-500 hover:to-purple-500 transition-all"
-          >
+          <button className="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-violet-500 hover:to-purple-500 transition-all">
             Send Message
-          </motion.button>
+          </button>
         </div>
+        {status && <p className="text-center text-white mt-4">{status}</p>}
       </motion.form>
     </section>
   );
