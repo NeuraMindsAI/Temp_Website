@@ -1,7 +1,9 @@
-Django>=4.0,<5.0
-djangorestframework
+Django
 gunicorn
+djangorestframework
 whitenoise
-psycopg2-binary  # Required if using PostgreSQL
-dj-database-url  # Required for using DATABASE_URL
-django-cors-headers  # For handling CORS
+psycopg2-binary
+dj-database-url
+django-cors-headers
+python-dotenv
+Pillow
