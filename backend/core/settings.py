@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-$z(f3yrspvufn)vl2#@!&e(0l8!d=tj0*(8#hfo=!n$jejn@eh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['neuramindsai.vercel.app', 'localhost']
 
 
 # Application definition
