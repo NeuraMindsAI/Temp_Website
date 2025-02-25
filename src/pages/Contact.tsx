@@ -20,9 +20,9 @@ export function Contact() {
     e.preventDefault();
     setStatus("Sending...");
 
-    const BACKEND_URL = "https://temp-website-2.onrender.com"; // Replace with actual Render URL
+    const BACKEND_URL = "https://temp-website-2.onrender.com/"; // Replace with actual Render URL
 
-    const response = await fetch(`${BACKEND_URL}/api/contact/submit/`, {
+    const response = await fetch(`${BACKEND_URL}api/contact/submit/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
