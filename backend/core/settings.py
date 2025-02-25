@@ -57,8 +57,10 @@ MIDDLEWARE = [
 # Allow frontend requests (Modify the ALLOWED_HOSTS as needed)
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # React frontend running on Vite
+    "https://neuramindsai.netlify.app/",  # Netlify frontend
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = "core.urls"
 
