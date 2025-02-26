@@ -1,5 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
@@ -18,24 +19,24 @@ export function Footer() {
           <h3 className="text-lg font-semibold text-white">Quick Links</h3>
           <ul className="mt-2 space-y-2">
             <li>
-              <a href="/about" className="hover:text-violet-300">
+              <Link to="/about" className="hover:text-violet-300">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services" className="hover:text-violet-300">
+              <Link to="/services" className="hover:text-violet-300">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/team" className="hover:text-violet-300">
+              <Link to="/team" className="hover:text-violet-300">
                 Meet the Team
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-violet-300">
+              <Link to="/contact" className="hover:text-violet-300">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
