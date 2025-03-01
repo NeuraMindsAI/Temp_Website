@@ -7,6 +7,7 @@ import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Team } from './pages/Team';
 import { Contact } from './pages/Contact';
+import { Chatbot } from "./components/Chatbot";
 import {Pricing} from './pages/Pricing';
 // bg-gradient-to-b from-black to-violet-950 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <div className="min-h-screen text-white">
         <Background />
         <Navbar />
+        <Chatbot />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
