@@ -14,7 +14,7 @@ export function Pricing() {
         "Webchat Integration – Basic chatbot setup",
         "Multi-Language Chat – Ask in any language, get responses in another",
       ],
-      buttonText: "Get Started",
+      buttonText: "Schedule a Call",
     },
     {
       title: "Pro Plan",
@@ -28,7 +28,7 @@ export function Pricing() {
         "AI File Search – Retrieve data from uploaded documents",
       ],
       recommended: true,
-      buttonText: "Get Started",
+      buttonText: "Schedule a Call",
     },
     {
       title: "Ultimate Plan",
@@ -41,7 +41,7 @@ export function Pricing() {
         "Multi-Step Query Processing – Handles complex questions",
         "Priority Support & AI Monitoring – Faster response & performance tracking",
       ],
-      buttonText: "Get Started",
+      buttonText: "Schedule a Call",
     },
   ];
 
