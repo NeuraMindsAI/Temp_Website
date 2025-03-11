@@ -45,8 +45,8 @@ INSTALLED_APPS = [
 # Add this middleware for CORS handling
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # ✅ Should be second in the list
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # Add this line
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -54,13 +54,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 # Allow frontend requests (Modify the ALLOWED_HOSTS as needed)
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # React frontend running on Vite
-    "https://neuramindsai.netlify.app/",  # Netlify frontend
+    "https://neuramindsai.netlify.app",  # Netlify frontend
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+CORS_ALLOW_HEADERS = ["*"]
 
 ROOT_URLCONF = "core.urls"
 
