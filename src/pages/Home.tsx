@@ -141,7 +141,7 @@ export function Home() {
         {/* Left Side - Text Content */}
         <div className="w-full md:w-1/2 text-left">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
-            Where Intelligence Meets Innovation
+          Your AI Automation Journey Begins Here
           </h1>
           <p className="mt-4 text-base sm:text-lg text-white">
             Revolutionizing industries with AI & ML solutions. Transform your
@@ -149,7 +149,7 @@ export function Home() {
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <Link className="w-full sm:w-auto text-center bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 text-lg rounded-md shadow-md transition" to="/services">
-              Explore Our Solutions
+              Integrate Neura
             </Link>
             <Link className="w-full sm:w-auto text-center bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 text-lg rounded-md shadow-md transition" to="/contact">
               Contact Us
