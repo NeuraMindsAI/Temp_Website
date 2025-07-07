@@ -59,6 +59,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # React frontend running on Vite
     "https://neuramindsai.netlify.app",  # Netlify frontend
+    "https://neuramindsai.co.in",  # Production domain
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
