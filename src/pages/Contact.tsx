@@ -10,7 +10,9 @@ export function Contact() {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
@@ -18,7 +20,9 @@ export function Contact() {
     e.preventDefault();
     setStatus("Sending...");
 
-    const response = await fetch("http://127.0.0.1:8000/api/contact/submit/", {
+    const BACKEND_URL = "https://temp-website-2.onrender.com/"; // Replace with actual Render URL
+
+    const response = await fetch(`${BACKEND_URL}api/contact/submit/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -57,10 +61,17 @@ export function Contact() {
         transition={{ duration: 0.5 }}
         className="relative w-full max-w-lg bg-black/30 backdrop-blur-lg border border-violet-500/40 rounded-xl p-8 shadow-lg"
       >
-        <h2 className="text-3xl font-bold text-white text-center mb-6">Get in Touch</h2>
+        <h2 className="text-3xl font-bold text-white text-center mb-6">
+          Get in Touch
+        </h2>
         <div className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm text-violet-300 mb-1">Name</label>
+            <label
+              htmlFor="name"
+              className="block text-sm text-violet-300 mb-1"
+            >
+              Name
+            </label>
             <input
               type="text"
               id="name"
@@ -71,7 +82,12 @@ export function Contact() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm text-violet-300 mb-1">Email</label>
+            <label
+              htmlFor="email"
+              className="block text-sm text-violet-300 mb-1"
+            >
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -82,7 +98,12 @@ export function Contact() {
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-sm text-violet-300 mb-1">Message</label>
+            <label
+              htmlFor="message"
+              className="block text-sm text-violet-300 mb-1"
+            >
+              Message
+            </label>
             <textarea
               id="message"
               value={formData.message}

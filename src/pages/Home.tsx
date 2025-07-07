@@ -47,14 +47,14 @@ const industries = [
     features: [
       "AI-powered disease diagnosis",
       "Automated medical chatbots",
-      "AI-driven drug discovery ",
+      "AI-driven drug discovery",
       "Smart Electronic Health Records (EHR) management & automation",
     ],
   },
   {
     title: "Agriculture & AgriTech",
     features: [
-      "AI-Powered Precision Farming ",
+      "AI-Powered Precision Farming",
       "AI-Driven Pest Detection",
       "AI-Powered Supply Chain & Logistics",
       "Weather Prediction & Climate Analysis",
@@ -82,21 +82,21 @@ export function Home() {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'https://assets2.lottiefiles.com/packages/lf20_w51pcehl.json'
+        path: '/chat-animation.json', // Load from public folder
       });
 
       const handleMouseMove = (e: MouseEvent) => {
-        if (!lottieContainerRef.current) return;
-        
+        if (!lottieContainerRef.current || !animationRef.current) return;
+
         const rect = lottieContainerRef.current.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width;
         const y = (e.clientY - rect.top) / rect.height;
-        
+
         gsap.to(animationRef.current, {
           animationSpeed: 0.5 + x,
           duration: 0.5,
         });
-        
+
         gsap.to(lottieContainerRef.current, {
           rotationY: (x - 0.5) * 10,
           rotationX: (y - 0.5) * -10,
@@ -105,13 +105,13 @@ export function Home() {
       };
 
       const handleMouseLeave = () => {
-        if (!lottieContainerRef.current) return;
-        
+        if (!lottieContainerRef.current || !animationRef.current) return;
+
         gsap.to(animationRef.current, {
           animationSpeed: 1,
           duration: 0.5,
         });
-        
+
         gsap.to(lottieContainerRef.current, {
           rotationY: 0,
           rotationX: 0,
@@ -141,15 +141,14 @@ export function Home() {
         {/* Left Side - Text Content */}
         <div className="w-full md:w-1/2 text-left">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
-            Where Intelligence Meets Innovation
+          Your AI Automation Journey Begins Here!!
           </h1>
           <p className="mt-4 text-base sm:text-lg text-white">
-            Revolutionizing industries with AI & ML solutions. Transform your
-            business with cutting-edge Artificial Intelligence.
-          </p>
+          Transform your business with powerful AI solutions. 
+          Automate workflows, boost efficiency, and stay ahead in the AI-powered future.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <Link className="w-full sm:w-auto text-center bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 text-lg rounded-md shadow-md transition" to="/services">
-              Explore Our Solutions
+              Integrate AI with Neura
             </Link>
             <Link className="w-full sm:w-auto text-center bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 text-lg rounded-md shadow-md transition" to="/contact">
               Contact Us
@@ -159,13 +158,10 @@ export function Home() {
 
         {/* Right Side - Lottie Animation */}
         <div className="w-full md:w-1/2 mt-8 md:mt-0">
-          <div ref={lottieContainerRef} className="w-full h-[300px] sm:h-[400px] md:h-[500px] perspective-1000">
-            {/* Lottie animation will be rendered here */}
-          </div>
+          <div ref={lottieContainerRef} className="w-full h-[300px] sm:h-[400px] md:h-[500px] perspective-1000" />
         </div>
       </section>
-
-      {/* Features Section */}
+        {/* Features Section */}
       <section className="py-12 md:py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
